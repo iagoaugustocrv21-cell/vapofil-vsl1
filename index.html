@@ -237,7 +237,9 @@
   }
   function goNext() {
     var params=new URLSearchParams(window.location.search);
-    window.location.href='https://quiz2.primevitalabs.com'+(params.toString()?'?'+params.toString():'');
+    var p=new URLSearchParams(window.location.search);
+    var tid=p.get('tid')||'';
+    window.location.href='https://quiz2.primevitalabs.com/?tid='+encodeURIComponent(tid)+'&affiliate=arkaff01';
   }
   if(VSL1_DELAY===0) unlockBtn();
   else setTimeout(unlockBtn, VSL1_DELAY*1000);
